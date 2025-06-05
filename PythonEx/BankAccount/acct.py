@@ -1,9 +1,7 @@
 class BankAccount:
-    bank_title = "Acct National Bank"
+    bank_title = "Le Bank National Bank"
 
     def __init__(self, customer_name, curr_balance, min_balance):
-        if (curr_balance < min_balance):
-            raise ValueError("Current Balance is less than required . . . GO MAKE SOME MONEY!")
         self.customer_name = customer_name
         self.current_balance = curr_balance
         self.min_bal = min_balance
@@ -26,7 +24,7 @@ class BankAccount:
         print(f"Bank: {BankAccount.bank_title}")
         print(f"Customer Name: ${self.customer_name}")
         print(f"Current balance: ${self.current_balance}")
-        print(f"Minimum Required Balance; ${self.min_bal}")
+        print(f"Minimum Required Balance: ${self.min_bal}")
 
 account1 = BankAccount("Alice", 1000, 100)
 account2 = BankAccount("Bob", 500, 50)
@@ -42,7 +40,3 @@ account2.deposit(50)
 account2.withdraw(600) # Should Trigger Violation
 account2.withdraw(100)
 account2.print_cust_info()
-
-print()
-
-account3 = BankAccount("Lob", 50, 100) # Should raise warning
